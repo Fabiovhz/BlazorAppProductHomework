@@ -1,0 +1,15 @@
+﻿@using System.Diagnostics; 
+<!--@using System.Diagnostics;          me sirve para usar el debug-->
+@page "/product"
+@inject IProductRepository productRepository
+<h3>Product Profile</h3>
+<ProductDetails Product="product"/>
+@code {
+    private Product product;
+
+    protected override void OnInitialized()
+    {
+        product = productRepository.GetProduct(1);
+        Debug.WriteLine(product != null ? "Producto obtenido correctamente" : "No se encontró el producto"); /*debug me muestra en la salida, console por el momemnto no*/
+    }
+}

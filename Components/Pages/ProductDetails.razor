@@ -1,0 +1,33 @@
+﻿
+<h3>ProductDetails</h3>
+
+@if(product != null)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.Description</td>
+            </tr>
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No hay información del producto disponible</p>
+}
+
+@code {
+    [Parameter]
+    public Product product { get; set; }
+}
